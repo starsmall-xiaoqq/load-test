@@ -1,0 +1,103 @@
+2020-08-19 20:39:52,164 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2020-08-19 20:39:52,210 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.3/libexec/bin/user.properties
+2020-08-19 20:39:52,222 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.3/libexec/bin/system.properties
+2020-08-19 20:39:52,224 INFO o.a.j.JMeter: Copyright (c) 1998-2020 The Apache Software Foundation
+2020-08-19 20:39:52,224 INFO o.a.j.JMeter: Version 5.3
+2020-08-19 20:39:52,224 INFO o.a.j.JMeter: java.version=14.0.2
+2020-08-19 20:39:52,224 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2020-08-19 20:39:52,224 INFO o.a.j.JMeter: os.name=Mac OS X
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: os.arch=x86_64
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: os.version=10.15.6
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: file.encoding=UTF-8
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: java.awt.headless=null
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: Max memory     =1073741824
+2020-08-19 20:39:52,225 INFO o.a.j.JMeter: Available Processors =8
+2020-08-19 20:39:52,236 INFO o.a.j.JMeter: Default Locale=English (EN)
+2020-08-19 20:39:52,236 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2020-08-19 20:39:52,236 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.3/libexec
+2020-08-19 20:39:52,237 INFO o.a.j.JMeter: user.dir  =/Volumes/syq_lxx_lmx/works/load-test
+2020-08-19 20:39:52,250 INFO o.a.j.JMeter: PWD       =/Volumes/syq_lxx_lmx/works/load-test
+2020-08-19 20:39:52,260 INFO o.a.j.JMeter: IP: 192.168.0.3 Name: MacPro.local FullName: 192.168.0.3
+2020-08-19 20:39:52,772 INFO o.a.j.JMeter: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2020-08-19 20:39:54,293 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2020-08-19 20:39:55,434 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-4bb13b9006ac6fe69443e0b517a97978-gui
+2020-08-19 20:39:57,384 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-basic=2.0, jpgc-graphs-additional=2.0, jpgc-graphs-composite=2.0, jpgc-casutg=2.9, jpgc-plugins-manager=1.4, jmeter-core=5.3, jmeter-ftp=5.3, jmeter-http=5.3, jmeter-jdbc=5.3, jmeter-jms=5.3, jmeter-junit=5.3, jmeter-java=5.3, jmeter-ldap=5.3, jmeter-mail=5.3, jmeter-mongodb=5.3, jmeter-native=5.3, jmeter-tcp=5.3, jmeter-components=5.3]
+2020-08-19 20:41:10,631 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2020-08-19 20:41:10,642 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2020-08-19 20:41:10,643 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2020-08-19 20:41:10,648 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2020-08-19 20:41:10,649 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2020-08-19 20:41:10,649 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2020-08-19 20:41:10,649 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2020-08-19 20:41:10,650 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2020-08-19 20:41:10,688 WARN o.a.j.s.CSVSaveService: Error parsing field 'Latency' at line 3296. java.lang.NumberFormatException: For input string: ""
+2020-08-19 20:41:10,692 WARN o.a.j.r.ResultCollector: Problem reading JTL file: /Volumes/syq_lxx_lmx/works/load-test/report/result.jtl
+org.apache.jorphan.util.JMeterError: java.lang.NumberFormatException: For input string: ""
+	at org.apache.jmeter.save.CSVSaveService.makeResultFromDelimitedString(CSVSaveService.java:375) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.save.CSVSaveService.processSamples(CSVSaveService.java:170) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.reporters.ResultCollector.loadExistingFile(ResultCollector.java:380) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.visualizers.gui.AbstractVisualizer.stateChanged(AbstractVisualizer.java:247) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.util.FilePanelEntry.fireFileChanged(FilePanelEntry.java:140) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.util.FilePanelEntry.actionPerformed(FilePanelEntry.java:155) ~[ApacheJMeter_core.jar:5.3]
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967) ~[?:?]
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308) ~[?:?]
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405) ~[?:?]
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262) ~[?:?]
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279) ~[?:?]
+	at java.awt.Component.processMouseEvent(Component.java:6636) ~[?:?]
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3342) ~[?:?]
+	at java.awt.Component.processEvent(Component.java:6401) ~[?:?]
+	at java.awt.Container.processEvent(Container.java:2263) ~[?:?]
+	at java.awt.Component.dispatchEventImpl(Component.java:5012) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2321) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4844) ~[?:?]
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4919) ~[?:?]
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4548) ~[?:?]
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4489) ~[?:?]
+	at java.awt.Container.dispatchEventImpl(Container.java:2307) ~[?:?]
+	at java.awt.Window.dispatchEventImpl(Window.java:2764) ~[?:?]
+	at java.awt.Component.dispatchEvent(Component.java:4844) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:721) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:715) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:391) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:745) ~[?:?]
+	at java.awt.EventQueue$5.run(EventQueue.java:743) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:391) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:68) ~[?:?]
+	at java.lang.Long.parseLong(Long.java:717) ~[?:?]
+	at java.lang.Long.parseLong(Long.java:832) ~[?:?]
+	at org.apache.jmeter.save.CSVSaveService.makeResultFromDelimitedString(CSVSaveService.java:332) ~[ApacheJMeter_core.jar:5.3]
+	... 40 more
+2020-08-19 20:42:07,581 INFO o.a.j.s.FileServer: Default base='/Volumes/syq_lxx_lmx/works/load-test'
+2020-08-19 20:42:07,589 INFO o.a.j.g.a.Load: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/simple/gwless-eahoserver.jmx
+2020-08-19 20:42:07,589 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/simple'
+2020-08-19 20:42:07,589 INFO o.a.j.s.SaveService: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/simple/gwless-eahoserver.jmx
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2020-08-19 20:42:07,805 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2020-08-19 20:42:08,179 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/simple'
+2020-08-19 20:42:27,305 INFO o.a.j.g.a.Load: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/scenarios/wso2-00005.jmx
+2020-08-19 20:42:27,305 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/scenarios'
+2020-08-19 20:42:27,305 INFO o.a.j.s.SaveService: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/scenarios/wso2-00005.jmx
+2020-08-19 20:42:27,467 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2020-08-19 20:42:27,468 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2020-08-19 20:42:27,853 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/scenarios'
+2020-08-19 20:46:01,655 INFO o.a.j.g.a.Load: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/scenarios/wso2auth-10000.jmx
+2020-08-19 20:46:01,655 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/scenarios'
+2020-08-19 20:46:01,655 INFO o.a.j.s.SaveService: Loading file: /Volumes/syq_lxx_lmx/works/jmeter/scenarios/wso2auth-10000.jmx
+2020-08-19 20:46:02,142 INFO o.a.j.s.FileServer: Set new base='/Volumes/syq_lxx_lmx/works/jmeter/scenarios'

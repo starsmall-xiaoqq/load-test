@@ -49,3 +49,8 @@ echo "Delete Jmeter Master"
 kubectl delete -n $tenant -f $working_dir/jmeter_master_configmap.yaml
 
 kubectl delete -n $tenant -f $working_dir/jmeter_master_deploy.yaml
+
+echo
+echo "Deleting Namespace: $tenant"
+
+kubectl delete namespace $tenant

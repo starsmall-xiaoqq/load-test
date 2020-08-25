@@ -55,9 +55,22 @@ jmeter_options=()
 for prop in "${jmeter_properties[@]+"${jmeter_properties[@]}"}"; do
     jmeter_options+=( -J"$prop" )
 done
+
+
 for prop in "${global_properties[@]+"${global_properties[@]}"}"; do
     jmeter_options+=( -G"$prop" )
 done
+
+FILE=./gproperties
+if test -f "$FILE"; then
+  echo "read global properties "
+  while IFS="=" read -r key value
+  do
+    jmeter_options+=(-G"$key=${value}")
+  done < "$FILE"
+  jmeter_options+=(-G"$key=${value}")
+fi
+echo ${jmeter_options[@]}
 
 test_name="$(basename "$jmx")"
 

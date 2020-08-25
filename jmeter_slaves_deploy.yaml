@@ -5,7 +5,7 @@ metadata:
   labels:
     jmeter_mode: slave
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       jmeter_mode: slave
@@ -15,10 +15,10 @@ spec:
         jmeter_mode: slave
     spec:
       containers:
-      - name: jmslave
-        image: jmeter-slave:latest
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 1099
-        - containerPort: 50000
-        resources: {}
+        - name: jmslave
+          image: 411396279728.dkr.ecr.ap-northeast-1.amazonaws.com/jmeter-slave:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 1099
+            - containerPort: 50000
+          resources: {}

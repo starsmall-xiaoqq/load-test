@@ -15,18 +15,18 @@ spec:
         jmeter_mode: master
     spec:
       containers:
-      - name: jmmaster
-        image: jmeter-master:latest
-        imagePullPolicy: IfNotPresent
-        command: [ "/bin/bash", "-c", "--" ]
-        args: [ "while true; do sleep 30; done;" ]
-        volumeMounts:
-          - name: loadtest
-            mountPath: /load_test
-            subPath: "load_test"
-        ports:
-        - containerPort: 60000
+        - name: jmmaster
+          image: 411396279728.dkr.ecr.ap-northeast-1.amazonaws.com/jmeter-master:latest
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash", "-c", "--"]
+          args: ["while true; do sleep 30; done;"]
+          volumeMounts:
+            - name: loadtest
+              mountPath: /load_test
+              subPath: "load_test"
+          ports:
+            - containerPort: 60000
       volumes:
-      - name: loadtest
-        configMap:
-         name: jmeter-load-test
+        - name: loadtest
+          configMap:
+            name: jmeter-load-test

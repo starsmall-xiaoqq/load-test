@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: jmeter-load-test
+  region: ap-northeast-1
+
+#availabilityZones: ["ap-northeast-1a", "ap-northeast-1c", "ap-northeast-1d"]
+
+nodeGroups:
+  - name: eks-sample-node
+    instanceType: c5.xlarge
+    # 3AZ保つための最低数
+    desiredCapacity: 3
+    minSize: 2
+    maxSize: 5
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+        albIngress: true
