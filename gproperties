@@ -1,3 +1,10 @@
 port=80
-url=hello-node
+url=hello-node.wso2apim.svc.cluster.local
 thread=10
+TARGET_PORT=80
+TARGET_HOST=hello-node.wso2apim.svc.cluster.local
+TARGET_PATH=/
+START_THREADS=60
+START_TIME=5
+HOLD_LOAD=60
+SHUTDOWN=5
