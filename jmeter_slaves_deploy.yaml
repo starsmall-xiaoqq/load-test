@@ -21,4 +21,14 @@ spec:
           ports:
             - containerPort: 1099
             - containerPort: 50000
+          env:
+            - name: HEAP
+              value: "-Xms1G -Xmx2G"
           resources: {}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: node
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              jmeter_mode: slave

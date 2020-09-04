@@ -16,7 +16,7 @@ global_properties=()
 jmeter_properties=()
 SCENARIO_FILE_NAME=${SCENARIO_STARTPOINT_FILE_NAME:-benchmark_plan.jmx}
 
-while getopts G:J:f:h OPT
+while getopts G:J:p:f:h OPT
 do
     case $OPT in
         G)
@@ -27,6 +27,9 @@ do
             ;;
         f)
             SCENARIO_FILE_NAME="$OPTARG"
+            ;;
+        p)
+            PROPERTY_FILE_NAME="$OPTARG"
             ;;
         h)
             usage_exit
@@ -40,6 +43,7 @@ do
     esac
 done
 
+prop=${PROPERTY_FILE_NAME:-propwso2}
 jmx=$SCENARIO_FILE_NAME
 [ -n "$jmx" ] || read -p 'Enter path to the jmx file ' jmx
 
@@ -61,7 +65,7 @@ for prop in "${global_properties[@]+"${global_properties[@]}"}"; do
     jmeter_options+=( -G"$prop" )
 done
 
-FILE=./gproperties
+FILE=$prop
 if test -f "$FILE"; then
   echo "read global properties "
   while IFS="=" read -r key value
