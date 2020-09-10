@@ -1,0 +1,7 @@
+TARGET_PORT=80
+TARGET_HOST=hello-node.wso2apim.svc.cluster.local
+TARGET_PATH=/bytes/1
+START_THREADS=200
+START_TIME=5
+HOLD_LOAD=60
+SHUTDOWN=5

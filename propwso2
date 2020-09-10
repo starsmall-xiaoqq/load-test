@@ -1,0 +1,7 @@
+TARGET_PORT=443
+TARGET_HOST=wso2am-pattern-3-am-gateway-lb.wso2apim.svc.cluster.local
+TARGET_PATH=/httpbin/v1/
+START_THREADS=100
+START_TIME=5
+HOLD_LOAD=60
+SHUTDOWN=5

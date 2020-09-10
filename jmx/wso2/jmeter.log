@@ -1,0 +1,12 @@
+2020-08-28 21:34:43,174 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2020-08-28 21:34:43,189 INFO o.a.j.JMeter: Loading user properties from: C:\Users\f4300210.TOSHIBA\Desktop\works\apache-jmeter-5.2.1\bin\user.properties
+2020-08-28 21:34:43,191 INFO o.a.j.JMeter: Loading system properties from: C:\Users\f4300210.TOSHIBA\Desktop\works\apache-jmeter-5.2.1\bin\system.properties
+2020-08-28 21:34:43,193 ERROR o.a.j.JMeter: An error occurred: 
+java.lang.IllegalArgumentException: Unknown arg: C:\Users\f4300210.TOSHIBA\Desktop\works\load-test\jmx\wso2\wso2-05000.jmx
+	at org.apache.jmeter.JMeter.initializeProperties(JMeter.java:848) ~[ApacheJMeter_core.jar:5.2.1]
+	at org.apache.jmeter.JMeter.start(JMeter.java:461) [ApacheJMeter_core.jar:5.2.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_251]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_251]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_251]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_251]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:253) [ApacheJMeter.jar:5.2.1]
