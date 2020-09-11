@@ -21,9 +21,17 @@ spec:
         name: datadog-cluster-agent
         env:
           - name: DD_API_KEY
-            value: "a9626e677fd0def1ef4945944e91cf36"
+            #value: "a9626e677fd0def1ef4945944e91cf36"
+            valueFrom:
+              configMapKeyRef:
+                name: datadog-cm
+                key:  DD_API_KEY
           - name: DD_APP_KEY		# Optional
-            value: "7dba3c2138cab7bfaf68041653943897ba21cf65"	# Optional
+            #value: "7dba3c2138cab7bfaf68041653943897ba21cf65"	# Optional
+            valueFrom:
+              configMapKeyRef:
+                name: datadog-cm
+                key:  DD_APP_KEY 
           - name: DD_COLLECT_KUBERNETES_EVENTS
             value: "true"
           - name: DD_LEADER_ELECTION

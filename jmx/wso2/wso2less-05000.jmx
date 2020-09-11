@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="TARGET_HOST" elementType="Argument">
             <stringProp name="Argument.name">TARGET_HOST</stringProp>
-            <stringProp name="Argument.value">${__P(TARGET_HOST)}</stringProp>
+            <stringProp name="Argument.value">${__P(TARGET_HOST,echoserver.wso2apim.svc.cluster.local)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="TARGET_PATH" elementType="Argument">
@@ -20,17 +20,17 @@
           </elementProp>
           <elementProp name="TARGET_PORT" elementType="Argument">
             <stringProp name="Argument.name">TARGET_PORT</stringProp>
-            <stringProp name="Argument.value">${__P(TARGET_PORT,443)}</stringProp>
+            <stringProp name="Argument.value">${__P(TARGET_PORT,80)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="START_THREADS" elementType="Argument">
             <stringProp name="Argument.name">START_THREADS</stringProp>
-            <stringProp name="Argument.value">${__P(START_THREADS,100)}</stringProp>
+            <stringProp name="Argument.value">${__P(START_THREADS,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="START_TIME" elementType="Argument">
             <stringProp name="Argument.name">START_TIME</stringProp>
-            <stringProp name="Argument.value">${__P(START_TIME,5)}</stringProp>
+            <stringProp name="Argument.value">${__P(START_TIME,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="HOLD_LOAD" elementType="Argument">
@@ -40,7 +40,7 @@
           </elementProp>
           <elementProp name="SHUTDOWN" elementType="Argument">
             <stringProp name="Argument.name">SHUTDOWN</stringProp>
-            <stringProp name="Argument.value">${__P(SHUTDOWN,5)}</stringProp>
+            <stringProp name="Argument.value">${__P(SHUTDOWN,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>

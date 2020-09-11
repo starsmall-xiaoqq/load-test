@@ -43,6 +43,11 @@
             <stringProp name="Argument.value">${__P(SHUTDOWN,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="TOKEN" elementType="Argument">
+            <stringProp name="Argument.name">TOKEN</stringProp>
+            <stringProp name="Argument.value">${__P(TOKEN,no_token)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -69,7 +74,7 @@
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Authorization</stringProp>
-              <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5UZG1aak00WkRrM05qWTBZemM1TW1abU9EZ3dNVEUzTVdZd05ERTVNV1JsWkRnNE56YzRaQT09In0.eyJhdWQiOiJodHRwOlwvXC9vcmcud3NvMi5hcGltZ3RcL2dhdGV3YXkiLCJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6ImFkbWluIiwidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInRpZXIiOiJVbmxpbWl0ZWQiLCJuYW1lIjoiRGVmYXVsdEFwcGxpY2F0aW9uIiwiaWQiOjEsInV1aWQiOm51bGx9LCJzY29wZSI6ImFtX2FwcGxpY2F0aW9uX3Njb3BlIGRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtLXBhdHRlcm4tMy1rbTo0NDNcL29hdXRoMlwvdG9rZW4iLCJ0aWVySW5mbyI6eyJVbmxpbWl0ZWQiOnsidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInN0b3BPblF1b3RhUmVhY2giOnRydWUsInNwaWtlQXJyZXN0TGltaXQiOjAsInNwaWtlQXJyZXN0VW5pdCI6bnVsbH19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6Imh0dHBiaW4iLCJjb250ZXh0IjoiXC9odHRwYmluXC92MSIsInB1Ymxpc2hlciI6ImFkbWluIiwidmVyc2lvbiI6InYxIiwic3Vic2NyaXB0aW9uVGllciI6IlVubGltaXRlZCJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJoZWxsby1ub2RlIiwiY29udGV4dCI6IlwvZWNob1wvdjEiLCJwdWJsaXNoZXIiOiJhZG1pbiIsInZlcnNpb24iOiJ2MSIsInN1YnNjcmlwdGlvblRpZXIiOiJVbmxpbWl0ZWQifV0sImNvbnN1bWVyS2V5IjoiNlZHeFRWNGlwU21nMUhmWWR2ZkdmQUM5bThZYSIsImV4cCI6MTU5OTIzMzg1NywiaWF0IjoxNTk5MTk3ODU3LCJqdGkiOiJlNzkzYmMxNC1kOTUyLTRmYmYtYWU1ZC1mZDExOTZlMjI1NzMifQ.FrUC6yd7o-m2rDrca4A0ModSxRx6j3ablrz06gmAjgRswkCHXPreXk__QrVz0Qu8w6zRRIiCxG4Vy9sw3tijmt5b5_CtoBlBeJGoIC1nT8faAWVXExKEdbhPMnk8iMJhWcX0tPviv6BP0pDv_SGi9QBRAOuWL0rXhrykDousaybRby0_TsCfHsCMY1rBxvI4VL_q4epn5iUdMADcK_J7deV1CF6-QaWBV81jEqWfVDzQ7xAZ1NnJYfqzopBv-ftwu_NhgeZwvMvEXVfnEBCOl9OXs_WvE6eOINrym6z3E_ccPuLoX-GAd3WsWHXNtO_2csGryGgJiM1e2stlD7kACw</stringProp>
+              <stringProp name="Header.value">Bearer ${TOKEN}</stringProp>
             </elementProp>
           </collectionProp>
         </HeaderManager>
@@ -86,7 +91,7 @@
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
           <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
@@ -95,7 +100,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UltimateThreadGroup-test" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UltimateThreadGroup-test" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
           <collectionProp name="2098226937">
             <stringProp name="50">2</stringProp>
@@ -116,7 +121,7 @@
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Authorization</stringProp>
-              <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5UZG1aak00WkRrM05qWTBZemM1TW1abU9EZ3dNVEUzTVdZd05ERTVNV1JsWkRnNE56YzRaQT09In0.eyJhdWQiOiJodHRwOlwvXC9vcmcud3NvMi5hcGltZ3RcL2dhdGV3YXkiLCJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6ImFkbWluIiwidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInRpZXIiOiJVbmxpbWl0ZWQiLCJuYW1lIjoiRGVmYXVsdEFwcGxpY2F0aW9uIiwiaWQiOjEsInV1aWQiOm51bGx9LCJzY29wZSI6ImFtX2FwcGxpY2F0aW9uX3Njb3BlIGRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtLXBhdHRlcm4tMy1rbTo0NDNcL29hdXRoMlwvdG9rZW4iLCJ0aWVySW5mbyI6eyJVbmxpbWl0ZWQiOnsidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInN0b3BPblF1b3RhUmVhY2giOnRydWUsInNwaWtlQXJyZXN0TGltaXQiOjAsInNwaWtlQXJyZXN0VW5pdCI6bnVsbH19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6Imh0dHBiaW4iLCJjb250ZXh0IjoiXC9odHRwYmluXC92MSIsInB1Ymxpc2hlciI6ImFkbWluIiwidmVyc2lvbiI6InYxIiwic3Vic2NyaXB0aW9uVGllciI6IlVubGltaXRlZCJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJoZWxsby1ub2RlIiwiY29udGV4dCI6IlwvZWNob1wvdjEiLCJwdWJsaXNoZXIiOiJhZG1pbiIsInZlcnNpb24iOiJ2MSIsInN1YnNjcmlwdGlvblRpZXIiOiJVbmxpbWl0ZWQifV0sImNvbnN1bWVyS2V5IjoiNlZHeFRWNGlwU21nMUhmWWR2ZkdmQUM5bThZYSIsImV4cCI6MTU5OTIzMzg1NywiaWF0IjoxNTk5MTk3ODU3LCJqdGkiOiJlNzkzYmMxNC1kOTUyLTRmYmYtYWU1ZC1mZDExOTZlMjI1NzMifQ.FrUC6yd7o-m2rDrca4A0ModSxRx6j3ablrz06gmAjgRswkCHXPreXk__QrVz0Qu8w6zRRIiCxG4Vy9sw3tijmt5b5_CtoBlBeJGoIC1nT8faAWVXExKEdbhPMnk8iMJhWcX0tPviv6BP0pDv_SGi9QBRAOuWL0rXhrykDousaybRby0_TsCfHsCMY1rBxvI4VL_q4epn5iUdMADcK_J7deV1CF6-QaWBV81jEqWfVDzQ7xAZ1NnJYfqzopBv-ftwu_NhgeZwvMvEXVfnEBCOl9OXs_WvE6eOINrym6z3E_ccPuLoX-GAd3WsWHXNtO_2csGryGgJiM1e2stlD7kACw</stringProp>
+              <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5UZG1aak00WkRrM05qWTBZemM1TW1abU9EZ3dNVEUzTVdZd05ERTVNV1JsWkRnNE56YzRaQT09In0.eyJhdWQiOiJodHRwOlwvXC9vcmcud3NvMi5hcGltZ3RcL2dhdGV3YXkiLCJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6ImFkbWluIiwidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInRpZXIiOiJVbmxpbWl0ZWQiLCJuYW1lIjoiRGVmYXVsdEFwcGxpY2F0aW9uIiwiaWQiOjEsInV1aWQiOm51bGx9LCJzY29wZSI6ImFtX2FwcGxpY2F0aW9uX3Njb3BlIGRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtLXBhdHRlcm4tMy1rbTo0NDNcL29hdXRoMlwvdG9rZW4iLCJ0aWVySW5mbyI6eyJVbmxpbWl0ZWQiOnsidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsInN0b3BPblF1b3RhUmVhY2giOnRydWUsInNwaWtlQXJyZXN0TGltaXQiOjAsInNwaWtlQXJyZXN0VW5pdCI6bnVsbH19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6Imh0dHBiaW4iLCJjb250ZXh0IjoiXC9odHRwYmluXC92MSIsInB1Ymxpc2hlciI6ImFkbWluIiwidmVyc2lvbiI6InYxIiwic3Vic2NyaXB0aW9uVGllciI6IlVubGltaXRlZCJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJoZWxsby1ub2RlIiwiY29udGV4dCI6IlwvZWNob1wvdjEiLCJwdWJsaXNoZXIiOiJhZG1pbiIsInZlcnNpb24iOiJ2MSIsInN1YnNjcmlwdGlvblRpZXIiOiJVbmxpbWl0ZWQifV0sImNvbnN1bWVyS2V5IjoiNlZHeFRWNGlwU21nMUhmWWR2ZkdmQUM5bThZYSIsImV4cCI6MTU5OTc0Nzc2NCwiaWF0IjoxNTk5NzExNzY0LCJqdGkiOiIzMDc5ZDQ3Yi0yMjliLTQ4MTUtOGUyZS1kOWQ0N2QzNjE4ZjAifQ.tkwPOkHczvXLNhKWDKd6xZM6uQv50HTQIgMf8JNH724qBOpfmtQbty4LGkPq2mIkdMEKPf5dkyHvBG79e2sF6n7xM_KmwLEja_l3hM7iXlI0gw-FLTjrAyA-hvcomt0gGZlRJKZZdjW7YR-LZQMdAK1oT5qbRFFGWy8jIopZxLfDs-mHPjusHAs5GXf6Nj8pzNZPAXcaH2ow3-lPQNrHfXtObdR6XUE2MTWMuux8DBES0XPy99_W0ZOPtpGNbOlpHMjUdKqB5xvrlJhMmcKS6l4zZwnZRiVKRP-VcrEelAlAK1kcKJp-jOVbVZ_ga8GxMlMr8Qj7Tl54pa44eL-44w</stringProp>
             </elementProp>
           </collectionProp>
         </HeaderManager>
@@ -129,7 +134,7 @@
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/httpbin/v1/</stringProp>
+          <stringProp name="HTTPSampler.path">/echo/v1/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

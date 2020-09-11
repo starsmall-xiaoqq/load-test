@@ -9,7 +9,7 @@ spec:
   ports:
   - name: http
     port: 80
-    targetPort: 80
+    targetPort: 8080
   selector:
     app: echoserver
 ---
@@ -35,7 +35,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: echoserver
         ports:
-        - containerPort: 80
+        - containerPort: 8080
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: node

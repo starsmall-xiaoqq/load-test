@@ -29,7 +29,11 @@ spec:
             protocol: TCP
         env:
           - name: DD_API_KEY
-            value: "a9626e677fd0def1ef4945944e91cf36"
+            #value: "a9626e677fd0def1ef4945944e91cf36"
+            valueFrom:
+              configMapKeyRef:
+                name: datadog-cm
+                key:  DD_API_KEY
           - name: DD_COLLECT_KUBERNETES_EVENTS
             value: "true"
           - name: DD_LEADER_ELECTION
