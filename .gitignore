@@ -141,4 +141,4 @@ vendordiff.patch
 tenant_export
 report
 environment
-command_eks_cluster_create.sh
+command_eks4fargate_create.sh
