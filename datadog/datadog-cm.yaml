@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: datadog-cm
+  namespace: default
+data:
+  DD_API_KEY: "a9626e677fd0def1ef4945944e91cf36"
+  DD_APP_KEY: "7dba3c2138cab7bfaf68041653943897ba21cf65"
+

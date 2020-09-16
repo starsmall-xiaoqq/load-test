@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jmeter-slaves
+  namespace: jmeter
   labels:
     jmeter_mode: slave
 spec:
@@ -13,9 +14,13 @@ spec:
     metadata:
       labels:
         jmeter_mode: slave
+        app: jmeter-slaves
+      name: jmeter-slaves
     spec:
+      serviceAccountName: datadog-agent
+      shareProcessNamespace: true
       containers:
-        - name: jmslave
+        - name: jmeter-slaves
           image: 411396279728.dkr.ecr.ap-northeast-1.amazonaws.com/jmeter-slave:latest
           imagePullPolicy: IfNotPresent
           ports:
@@ -25,6 +30,35 @@ spec:
             - name: HEAP
               value: "-Xms1G -Xmx2G"
           resources: {}
+        - name: datadog-agent
+          image: datadog/agent:latest
+          ports:
+            - containerPort: 8125
+              name: dogstatsdport
+              protocol: UDP
+          env:
+            - name: DD_API_KEY
+              value: "a9626e677fd0def1ef4945944e91cf36"
+              valueFrom:
+                configMapKeyRef:
+                  name: datadog-cm
+                  key:  DD_API_KEY
+            - name: DD_SITE
+              value: "datadoghq.com"
+            - name: DD_EKS_FARGATE
+              value: "true"
+            - name: DD_KUBERNETES_KUBELET_NODENAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+          resources:
+              requests:
+                memory: "256Mi"
+                cpu: "200m"
+              limits:
+                memory: "256Mi"
+                cpu: "200m"
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: node

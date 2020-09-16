@@ -1,7 +1,7 @@
 TARGET_PORT=443
-TARGET_HOST=wso2am-pattern-3-am-gateway-lb.wso2apim.svc.cluster.local
+TARGET_HOST=gateway.am.karanashi.io
 TARGET_PATH=/echo/v1/
-START_THREADS=60
+START_THREADS=5
 START_TIME=5
 HOLD_LOAD=60
 SHUTDOWN=5
