@@ -35,14 +35,13 @@ then
   echo "Current list of namespaces on the kubernetes cluster"
   sleep 2
 
- kubectl get namespaces | grep -v NAME | awk '{print $1}'
-  exit 1
+  kubectl get namespaces | grep -v NAME | awk '{print $1}'
+else
+  echo
+  echo "Creating Namespace: $tenant"
+
+  kubectl create namespace $tenant
 fi
-
-echo
-echo "Creating Namespace: $tenant"
-
-kubectl create namespace $tenant
 
 echo "Namspace $tenant has been created"
 
@@ -67,6 +66,8 @@ kubectl create -n $tenant -f $working_dir/jmeter_slaves_deploy.yaml
 kubectl create -n $tenant -f $working_dir/jmeter_slaves_svc.yaml
 
 echo "Creating Jmeter Master"
+
+kubectl create -n $tenant -f $working_dir/jmeter_pvc.yaml
 
 kubectl create -n $tenant -f $working_dir/jmeter_master_configmap.yaml
 

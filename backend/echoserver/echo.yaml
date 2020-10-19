@@ -50,3 +50,9 @@ spec:
             labelSelector:
               matchLabels:
                 jmeter_mode: slave
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
+            labelSelector:
+              matchLabels:
+                deployment: wso2am-pattern-3-am-gateway

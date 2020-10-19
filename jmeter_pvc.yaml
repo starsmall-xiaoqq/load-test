@@ -1,0 +1,33 @@
+#https://qiita.com/sotoiwa/items/23cb916cf6cc553efc5a
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jmeter-pv
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  nfs:
+    server: fs-25c0dd04.efs.ap-northeast-1.amazonaws.com
+    path: /jmeter
+  storageClassName: jmeter-report
+  claimRef:
+    name: jmeter-pvc
+    namespace: jmeter 
+  persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jmeter-pvc
+  namespace: jmeter
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: jmeter-report
+
+

@@ -24,9 +24,22 @@ spec:
             - name: loadtest
               mountPath: /load_test
               subPath: "load_test"
+            - name: jmeter-report
+              mountPath: /report
           ports:
             - containerPort: 60000
+          resources: {}
+          #  requests:
+          #    memory: "256Mi"
+          #    cpu: "200m"
+          #  limits:
+          #    memory: "256Mi"
+          #    cpu: "200m"
       volumes:
         - name: loadtest
           configMap:
             name: jmeter-load-test
+        - name: jmeter-report
+          persistentVolumeClaim:
+            claimName: jmeter-pvc
+

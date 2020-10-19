@@ -46,6 +46,8 @@ kubectl delete -n $tenant -f $working_dir/jmeter_slaves_svc.yaml
 
 echo "Delete Jmeter Master"
 
+kubectl delete -n $tenant -f $working_dir/jmeter_pvc.yaml  
+
 kubectl delete -n $tenant -f $working_dir/jmeter_master_configmap.yaml
 
 kubectl delete -n $tenant -f $working_dir/jmeter_master_deploy.yaml

@@ -5,7 +5,7 @@ metadata:
   labels:
     jmeter_mode: slave
 spec:
-  replicas: 3
+  replicas: 8
   selector:
     matchLabels:
       jmeter_mode: slave
@@ -22,3 +22,17 @@ spec:
             - containerPort: 1099
             - containerPort: 50000
           resources: {}
+          #  requests:
+          #    memory: "1500Mi"
+          #    cpu: "200m"
+          #  limits:
+          #    memory: "1500Mi"
+          #    cpu: "200m"
+      
+      #topologySpreadConstraints:
+      #  - maxSkew: 1
+      #    topologyKey: node
+      #    whenUnsatisfiable: DoNotSchedule #ScheduleAnyway
+      #    labelSelector:
+      #      matchLabels:
+      #        jmeter_mode: slave   
